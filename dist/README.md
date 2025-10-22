@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Kal
-=======
 # Freelancermatrix static site (Node.js)
 
 This project serves the existing static site files (for example `index.html`) using a minimal Express server.
@@ -24,4 +21,16 @@ npm start
 Developer
 
 - Use `npm run dev` to start the server with `nodemon` for automatic restarts during development.
->>>>>>> 635bac1 (Initial commit)
+
+Netlify
+
+- This repository includes a simple build step that copies the site into a `dist/` folder. Netlify is configured via `netlify.toml` to run `npm run build` and publish the `dist/` folder.
+
+- To deploy on Netlify:
+
+```bash
+# from the project root
+npm install
+npm run build
+# then push the repository to GitHub and connect the repo in Netlify. Netlify will run the same build and publish `dist/`.
+```

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask a Project Doubt - DevMentor</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>DevMentor</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mentors.html">Find Mentors</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="signup.html">Become a Mentor</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+   <!----<section class="page-header">
+        <div class="container">
+            <h1>Ask a Project Doubt</h1>
+            <p>Share your project issue and get help from mentors or the community.</p>
+        </div>
+    </section> -->
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2>Post a Doubt</h2>
+                    <div class="signed-user-box" style="border:1px solid #e6e6e6;padding:10px;border-radius:6px;margin:8px 0 14px;display:flex;flex-direction:column;gap:4px;background:#fafafa;">
+                        <div style="font-size:0.95rem;color:#333;">Signed in as</div>
+                        <div style="font-weight:600;" id="signedInUser">User</div>
+                       <!---- <div style="font-size:0.9rem;color:#666;" id="userEmail">you@example.com</div> -->
+                    </div>
+                    <form id="postForm">
+                       
+                        <div class="form-group">
+                            <label for="projectName">Project Name</label>
+                            <input id="projectName" class="form-control" placeholder="Project name (optional)" />
+                        </div>
+                        <div class="form-group">
+                            <label for="projectLink">Project Link</label>
+                            <input id="projectLink" class="form-control" placeholder="Repo or URL (optional)" />
+                        </div>
+                        <div class="form-group">
+                            <label for="postBody">Describe your doubt</label>
+                            <textarea id="postBody" class="form-control" rows="6" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="codeSnippet">Code Snippet (optional)</label>
+                            <textarea id="codeSnippet" class="form-control" rows="6" placeholder="Optional code or logs"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="attachments">Attachments (images or .zip)</label>
+                            <input id="attachments" type="file" accept="image/*,.zip" multiple />
+                            <div id="attachmentPreview" style="margin-top:8px;display:flex;flex-wrap:wrap;gap:8px;"></div>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Post Doubt</button>
+                    </form>
+                    <!-- Mentors list inserted below the form -->
+                    <div class="mentors-small" style="margin-top:20px;">
+                        <h3 style="margin-bottom:12px;">Available Mentors</h3>
+                        <div class="mentor-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+                            <div class="mentor-card" style="background:#fff;padding:12px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+                                <div style="display:flex;gap:10px;align-items:center;">
+                                    <img src="images/mentor-sarah.svg" alt="Sarah" style="width:56px;height:56px;" />
+                                    <div>
+                                        <strong>Sarah Johnson</strong>
+                                        <div class="muted" style="font-size:0.85rem;">Senior Frontend Engineer</div>
+                                    </div>
+                                </div>
+                                <p style="margin:10px 0 12px;font-size:0.95rem;">React, JavaScript, CSS</p>
+                                <a class="btn" href="signup-user.html">Book Session</a>
+                            </div>
+
+                            <div class="mentor-card" style="background:#fff;padding:12px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+                                <div style="display:flex;gap:10px;align-items:center;">
+                                    <img src="images/mentor-david.svg" alt="David" style="width:56px;height:56px;" />
+                                    <div>
+                                        <strong>David Chen</strong>
+                                        <div class="muted" style="font-size:0.85rem;">Backend Architect</div>
+                                    </div>
+                                </div>
+                                <p style="margin:10px 0 12px;font-size:0.95rem;">Node.js, Databases, APIs</p>
+                                <a class="btn" href="signup-user.html">Book Session</a>
+                            </div>
+
+                            <div class="mentor-card" style="background:#fff;padding:12px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+                                <div style="display:flex;gap:10px;align-items:center;">
+                                    <img src="images/mentor-profile.svg" alt="Maya" style="width:56px;height:56px;" />
+                                    <div>
+                                        <strong>Maya Patel</strong>
+                                        <div class="muted" style="font-size:0.85rem;">Full Stack Developer</div>
+                                    </div>
+                                </div>
+                                <p style="margin:10px 0 12px;font-size:0.95rem;">JavaScript, React, Node.js</p>
+                                <a class="btn" href="signup-user.html">Book Session</a>
+                            </div>
+                        </div>
+                        <div style="text-align:center;margin-top:14px;">
+                            <a class="btn primary-btn" href="mentors.html">View more mentors</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>How long are mentoring sessions?</h3>
+                    <p>Standard mentoring sessions are 60 minutes long. You can book multiple sessions if you need more time.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is the cost of mentoring?</h3>
+                    <p>Mentoring rates vary by mentor. Most sessions range from $50-$150 per hour depending on the mentor's experience level.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do sessions take place?</h3>
+                    <p>Sessions are conducted via video call. You'll receive a link after booking your session.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I cancel or reschedule?</h3>
+                    <p>Yes, you can reschedule or cancel up to 24 hours before your session without any penalty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>DevMentor</h2>
+                <p>Connecting engineers with mentors since 2023</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="mentors.html">Find Mentors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 DevMentor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/protected.js"></script>
+    <script type="module" src="js/nav-auth.js"></script>
+</body>
+</html>

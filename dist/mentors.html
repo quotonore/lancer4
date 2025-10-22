@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Mentors - DevMentor</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>DevMentor</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mentors.html" class="active">Find Mentors</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Become a Mentor</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Find Your Perfect Mentor</h1>
+            <p>Connect with experienced software engineers who can help you grow your skills and advance your career.</p>
+        </div>
+    </section>
+
+    <section class="mentors-section">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search mentors by name, skills, or expertise...">
+            </div>
+
+            <div class="filter-section">
+                <h3>Filter by Expertise</h3>
+                <div class="filter-container">
+                    <button class="filter-button active" data-filter="all">All</button>
+                    <button class="filter-button" data-filter="frontend">Frontend</button>
+                    <button class="filter-button" data-filter="backend">Backend</button>
+                    <button class="filter-button" data-filter="fullstack">Full Stack</button>
+                    <button class="filter-button" data-filter="mobile">Mobile</button>
+                    <button class="filter-button" data-filter="devops">DevOps</button>
+                </div>
+            </div>
+
+            <div class="mentors-list">
+                <!-- Mentor 1 -->
+                <div class="mentor-list-item filterable-item searchable-item frontend">
+                    <div class="mentor-image">
+                        <img src="images/mentor-sarah.svg" alt="Sarah Johnson">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Sarah Johnson</h3>
+                        <p class="mentor-title">Senior Frontend Engineer</p>
+                        <div class="mentor-skills">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">CSS</span>
+                        </div>
+                        <p class="mentor-bio">8+ years experience building scalable web applications.</p>
+                        <div class="mentor-cta">
+                            <a href="pricing.html" class="btn primary-btn">Book Session</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor 2 -->
+                <div class="mentor-list-item filterable-item searchable-item backend">
+                    <div class="mentor-image">
+                        <img src="images/mentor-david.svg" alt="David Chen">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>David Chen</h3>
+                        <p class="mentor-title">Backend Architect</p>
+                        <div class="mentor-skills">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Databases</span>
+                        </div>
+                        <p class="mentor-bio">Expert in building robust backend systems and APIs.</p>
+                        <div class="mentor-cta">
+                            <a href="pricing.html" class="btn primary-btn">Book Session</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor 3 -->
+                <div class="mentor-list-item filterable-item searchable-item fullstack">
+                    <div class="mentor-image">
+                        <img src="images/mentor-profile.svg" alt="Maya Patel">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Maya Patel</h3>
+                        <p class="mentor-title">Full Stack Developer</p>
+                        <div class="mentor-skills">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                        </div>
+                        <p class="mentor-bio">Full stack developer with expertise in MERN stack.</p>
+                        <div class="mentor-cta">
+                            <a href="pricing.html" class="btn primary-btn">Book Session</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor 4 -->
+                <div class="mentor-list-item filterable-item searchable-item mobile">
+                    <div class="mentor-image">
+                        <img src="images/mentor-profile.svg" alt="James Wilson">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>James Wilson</h3>
+                        <p class="mentor-title">Mobile App Developer</p>
+                        <div class="mentor-skills">
+                            <span class="skill-tag">React Native</span>
+                            <span class="skill-tag">Swift</span>
+                            <span class="skill-tag">Kotlin</span>
+                        </div>
+                        <p class="mentor-bio">Specialized in cross-platform and native mobile app development.</p>
+                        <div class="mentor-cta">
+                            <a href="pricing.html" class="btn primary-btn">Book Session</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor 5 -->
+                <div class="mentor-list-item filterable-item searchable-item devops">
+                    <div class="mentor-image">
+                        <img src="images/mentor-profile.svg" alt="Alex Rodriguez">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Alex Rodriguez</h3>
+                        <p class="mentor-title">DevOps Engineer</p>
+                        <div class="mentor-skills">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                        </div>
+                        <p class="mentor-bio">Expert in cloud infrastructure and CI/CD pipelines.</p>
+                        <div class="mentor-cta">
+                            <a href="pricing.html" class="btn primary-btn">Book Session</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor 6 -->
+                <div class="mentor-list-item filterable-item searchable-item frontend">
+                    <div class="mentor-image">
+                        <img src="images/mentor-profile.svg" alt="Sophia Kim">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Sophia Kim</h3>
+                        <p class="mentor-title">UI/UX Developer</p>
+                        <div class="mentor-skills">
+                            <span class="skill-tag">UI Design</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                        <p class="mentor-bio">Specialized in creating beautiful and intuitive user interfaces.</p>
+                        <div class="mentor-cta">
+                            <a href="pricing.html" class="btn primary-btn">Book Session</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>DevMentor</h2>
+                <p>Connecting engineers with mentors since 2023</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="mentors.html">Find Mentors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 DevMentor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script type="module" src="js/nav-auth.js"></script>
+</body>
+</html>
