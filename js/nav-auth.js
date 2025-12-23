@@ -2,50 +2,62 @@
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 import { auth } from './firebase-init.js';
 
-function addLogoutNav(navLinks) {
-  if (document.getElementById('logoutNav')) return;
-  const li = document.createElement('li');
-  const a = document.createElement('a');
-  a.href = '#';
-  a.id = 'logoutNav';
-  a.textContent = 'Logout';
-  li.appendChild(a);
-  navLinks.appendChild(li);
-  a.addEventListener('click', async (e) => {
-    e.preventDefault();
-    try {
-      await signOut(auth);
-      // after sign out, go to login page
-      window.location.href = 'login.html';
-    } catch (err) {
-      console.error('[nav-auth] signOut failed', err);
-    }
-  });
-}
-
-function addLoginNav(navLinks) {
-  // don't duplicate
-  if (navLinks.querySelector('a[href="login.html"]')) return;
-  const li = document.createElement('li');
-  const a = document.createElement('a');
-  a.href = 'login.html';
-  a.textContent = 'Login';
-  li.appendChild(a);
-  navLinks.appendChild(li);
-}
-
+// Update the existing Login link to show account name and use a dropdown for logout.
 onAuthStateChanged(auth, (user) => {
   const navLinks = document.querySelector('.nav-links');
   if (!navLinks) return;
+
+  // find the existing Login anchor (from HTML)
+  const loginAnchor = navLinks.querySelector('a[href="login.html"]');
+  if (!loginAnchor) return;
+
+  const parentLi = loginAnchor.parentElement;
+
+  // helper to remove any dropdown menu we added previously
+  function removeDropdown() {
+    if (parentLi.classList.contains('dropdown')) parentLi.classList.remove('dropdown');
+    const existingMenu = parentLi.querySelector('.dropdown-menu');
+    if (existingMenu) existingMenu.remove();
+    // reset anchor text and href
+    loginAnchor.textContent = 'Login';
+    loginAnchor.href = 'login.html';
+  }
+
   if (user) {
-    // remove login link if present
-    const loginAnchor = navLinks.querySelector('a[href="login.html"]');
-    if (loginAnchor && loginAnchor.parentElement) loginAnchor.parentElement.remove();
-    addLogoutNav(navLinks);
+    // show user's displayName (fallback to email local part)
+    const name = user.displayName || (user.email ? user.email.split('@')[0] : 'Account');
+    loginAnchor.textContent = name;
+    // clicking the name should go to protected page
+    loginAnchor.href = 'protected.html';
+
+    // ensure we don't add duplicate menu
+    if (!parentLi.querySelector('.dropdown-menu')) {
+      parentLi.classList.add('dropdown');
+      const menu = document.createElement('ul');
+      menu.classList.add('dropdown-menu');
+
+      const item = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#';
+      a.id = 'logoutNav';
+      a.textContent = 'Logout';
+      item.appendChild(a);
+      menu.appendChild(item);
+      parentLi.appendChild(menu);
+
+      a.addEventListener('click', async (e) => {
+        e.preventDefault();
+        try {
+          await signOut(auth);
+          // after sign out, redirect to login
+          window.location.href = 'login.html';
+        } catch (err) {
+          console.error('[nav-auth] signOut failed', err);
+        }
+      });
+    }
   } else {
-    // remove logoutNav if present
-    const logout = document.getElementById('logoutNav');
-    if (logout && logout.parentElement) logout.parentElement.remove();
-    addLoginNav(navLinks);
+    // logged out: remove dropdown and restore Login link
+    removeDropdown();
   }
 });
