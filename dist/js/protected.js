@@ -2,7 +2,7 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 import { auth } from './auth.js';
 
-const STORAGE_KEY = 'devmentor_posts_v1';
+const STORAGE_KEY = 'trymentor_posts_v1';
 
 const postsList = document.getElementById('postsList');
 const postForm = document.getElementById('postForm');
@@ -213,4 +213,4 @@ if (attachmentsInput) {
 
 // attachments are captured in `lastAttachments` by the input change handler and stored with each post
 
-window._devmentor = { loadPosts, savePosts };
+window._trymentor = { loadPosts, savePosts };
