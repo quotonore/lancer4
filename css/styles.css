@@ -237,6 +237,12 @@ ul {
 
 img {
     max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 .container {
